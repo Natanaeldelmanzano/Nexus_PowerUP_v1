@@ -7,7 +7,7 @@ import { fileURLToPath } from 'url';
 import { dirname } from 'path';
 
 const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__dirname);
+const __dirname = dirname(__filename);
 
 /**
  * Script de verificación de arquitectura para NEXUS AI Studio
@@ -523,7 +523,7 @@ ${warnings.length > 0 ? '- Revisar y corregir advertencias cuando sea posible' :
 }
 
 // Ejecutar script
-if (import.meta.url === `file://${process.argv[1]}`) {
+if (process.argv[1] && import.meta.url.endsWith(process.argv[1].replace(/\\/g, '/'))) {
   verifyArchitecture();
 }
 

@@ -373,8 +373,8 @@ function displaySessionSummary(session) {
 }
 
 // Ejecutar script
-if (require.main === module) {
+if (process.argv[1] && import.meta.url.endsWith(process.argv[1].replace(/\\/g, '/'))) {
   endSession();
 }
 
-module.exports = { endSession };
+export { endSession };

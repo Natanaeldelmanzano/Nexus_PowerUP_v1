@@ -252,8 +252,8 @@ function suggestNextSteps(previousContext) {
 }
 
 // Ejecutar script
-if (require.main === module) {
+if (process.argv[1] && import.meta.url.endsWith(process.argv[1].replace(/\\/g, '/'))) {
   startSession();
 }
 
-module.exports = { startSession };
+export { startSession };
