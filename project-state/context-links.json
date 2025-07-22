@@ -1,0 +1,226 @@
+{
+  "components": {
+    "FileExplorer": {
+      "path": "src/components/project/FileExplorer.tsx",
+      "dependencies": ["ProjectContext", "useProject", "Lucide React"],
+      "relatedComponents": ["SearchPanel", "LeftPanel"],
+      "lastModified": "2025-07-23",
+      "status": "stable",
+      "pendingFeatures": [
+        "Drag & Drop functionality",
+        "Multiple file selection",
+        "File preview on hover",
+        "Keyboard navigation shortcuts"
+      ],
+      "features": [
+        "File tree navigation",
+        "Folder expand/collapse",
+        "Context menus (rename, delete, new file/folder)",
+        "Search integration",
+        "File type icons"
+      ],
+      "testCoverage": 0,
+      "documentation": "partial"
+    },
+    "SearchPanel": {
+      "path": "src/components/project/SearchPanel.tsx",
+      "dependencies": ["ProjectContext", "useProject", "Lucide React"],
+      "relatedComponents": ["FileExplorer", "LeftPanel"],
+      "lastModified": "2025-07-23",
+      "status": "stable",
+      "pendingFeatures": [
+        "Replace functionality",
+        "Advanced filters (file type, date, size)",
+        "Search history",
+        "Saved searches",
+        "Search in specific directories"
+      ],
+      "features": [
+        "Text search across files",
+        "Regex support",
+        "Case sensitivity toggle",
+        "Whole word matching",
+        "Include/exclude file patterns",
+        "Debounced search execution",
+        "Highlighted search results"
+      ],
+      "testCoverage": 0,
+      "documentation": "partial"
+    },
+    "Toaster": {
+      "path": "src/components/ui/toaster.tsx",
+      "dependencies": ["react-hot-toast", "Tailwind CSS"],
+      "relatedComponents": [],
+      "lastModified": "2025-07-23",
+      "status": "stable",
+      "pendingFeatures": [
+        "Custom toast positions",
+        "Toast persistence options",
+        "Action buttons in toasts",
+        "Toast queuing system"
+      ],
+      "features": [
+        "Success notifications",
+        "Error notifications",
+        "Loading states",
+        "Custom styling with Tailwind",
+        "Auto-dismiss functionality"
+      ],
+      "testCoverage": 0,
+      "documentation": "complete"
+    },
+    "TopBar": {
+      "path": "src/components/layout/TopBar.tsx",
+      "dependencies": ["Lucide React"],
+      "relatedComponents": ["MainLayout"],
+      "lastModified": "2025-07-23",
+      "status": "stable",
+      "pendingFeatures": [
+        "User profile dropdown",
+        "Notification center",
+        "Quick actions menu",
+        "Theme switcher"
+      ],
+      "features": [
+        "Application branding",
+        "Navigation elements",
+        "User interface controls"
+      ],
+      "testCoverage": 0,
+      "documentation": "basic"
+    },
+    "LeftPanel": {
+      "path": "src/components/layout/LeftPanel.tsx",
+      "dependencies": ["FileExplorer", "SearchPanel"],
+      "relatedComponents": ["MainLayout", "FileExplorer", "SearchPanel"],
+      "lastModified": "2025-07-23",
+      "status": "stable",
+      "pendingFeatures": [
+        "Panel resizing",
+        "Tab management",
+        "Panel state persistence",
+        "Custom panel layouts"
+      ],
+      "features": [
+        "Project navigation container",
+        "Component integration",
+        "Responsive design"
+      ],
+      "testCoverage": 0,
+      "documentation": "basic"
+    },
+    "MainLayout": {
+      "path": "src/components/layout/MainLayout.tsx",
+      "dependencies": ["TopBar", "LeftPanel"],
+      "relatedComponents": ["App"],
+      "lastModified": "2025-07-23",
+      "status": "stable",
+      "pendingFeatures": [
+        "Layout customization",
+        "Panel management",
+        "Keyboard shortcuts",
+        "Layout presets"
+      ],
+      "features": [
+        "Application layout orchestration",
+        "Responsive design",
+        "Component composition"
+      ],
+      "testCoverage": 0,
+      "documentation": "basic"
+    }
+  },
+  "contexts": {
+    "ProjectContext": {
+      "path": "src/contexts/ProjectContext.tsx",
+      "consumers": ["FileExplorer", "SearchPanel", "MainLayout"],
+      "lastModified": "2025-07-23",
+      "status": "stable",
+      "pendingChanges": [
+        "Add recent files management",
+        "Implement project settings",
+        "Add file watching capabilities",
+        "Integrate with version control"
+      ],
+      "features": [
+        "Project state management",
+        "File operations",
+        "Search functionality",
+        "Project configuration"
+      ],
+      "testCoverage": 0,
+      "documentation": "partial"
+    }
+  },
+  "hooks": {
+    "useProject": {
+      "path": "src/hooks/useProject.ts",
+      "consumers": ["FileExplorer", "SearchPanel"],
+      "dependencies": ["ProjectContext"],
+      "lastModified": "2025-07-23",
+      "status": "stable",
+      "pendingEnhancements": [
+        "Add caching mechanisms",
+        "Implement optimistic updates",
+        "Add error handling",
+        "Performance optimizations"
+      ],
+      "features": [
+        "Project context access",
+        "State management helpers",
+        "Action dispatchers"
+      ],
+      "testCoverage": 0,
+      "documentation": "basic"
+    }
+  },
+  "services": {},
+  "utils": {},
+  "types": {},
+  "infrastructure": {
+    "docker": {
+      "status": "configured",
+      "lastModified": "2025-07-23",
+      "features": [
+        "Multi-stage build optimization",
+        "Security hardening",
+        "Health checks",
+        "Multi-platform support"
+      ],
+      "pendingImprovements": [
+        "Build cache optimization",
+        "Security scanning integration",
+        "Performance monitoring"
+      ]
+    },
+    "dockerCompose": {
+      "status": "configured",
+      "lastModified": "2025-07-23",
+      "environments": {
+        "development": {
+          "services": 11,
+          "features": ["Full observability", "Development tools", "Hot reload"]
+        },
+        "production": {
+          "services": 10,
+          "features": ["Load balancing", "Automated backup", "Monitoring"]
+        }
+      },
+      "pendingImprovements": [
+        "Service mesh integration",
+        "Advanced monitoring",
+        "Automated scaling"
+      ]
+    }
+  },
+  "metadata": {
+    "lastUpdate": "2025-07-23T00:37:00Z",
+    "totalComponents": 6,
+    "totalContexts": 1,
+    "totalHooks": 1,
+    "averageTestCoverage": 0,
+    "documentationCompleteness": 30,
+    "architecturalHealth": "good",
+    "technicalDebt": "low"
+  }
+}
